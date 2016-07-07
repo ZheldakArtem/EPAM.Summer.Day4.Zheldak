@@ -19,17 +19,9 @@ namespace Task2
             Revenue = revenue;  
         }
 
-        public string ToString(string param)
-        {
-            if (param == null)
-                throw new ArgumentNullException();
-            FormatCustomer formatProvider = new FormatCustomer();
-            param = $"{{0:{param}}}";
-            return string.Format(formatProvider, param, this);
-        }
         public override string ToString()
         {
-            return ToString("NCR");
+            return $"{Name} {ContactPhone} {Revenue}";
         }
     }
 }
