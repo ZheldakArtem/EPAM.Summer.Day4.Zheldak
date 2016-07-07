@@ -23,7 +23,7 @@ namespace Task2
 
                 if (format.Contains("R"))
                 {
-                    str.Append($"{customer.Revenue:C}");
+                    str.Append($" {customer.Revenue:C}");
                 }
 
                 if (format.Contains("C"))
