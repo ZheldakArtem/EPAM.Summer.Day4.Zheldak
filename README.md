@@ -1,5 +1,4 @@
 # EPAM.Summer.Day4.Zheldak
-Epam Summer Day4
 
 Задание 1.
 
