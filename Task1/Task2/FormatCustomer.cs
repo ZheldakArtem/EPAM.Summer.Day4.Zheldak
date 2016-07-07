@@ -25,6 +25,7 @@ namespace Task2
                 {
                     str.Append($"{customer.Revenue:C}");
                 }
+
                 if (format.Contains("C"))
                 {
                     str.Append(" " + customer.ContactPhone);
