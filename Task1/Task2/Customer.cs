@@ -23,7 +23,7 @@ namespace Task2
         {
             if (param == null)
                 throw new ArgumentNullException();
-            CustomerFormater formatProvider = new CustomerFormater();
+            FormatCustomer formatProvider = new FormatCustomer();
             param = $"{{0:{param}}}";
             return string.Format(formatProvider, param, this);
         }

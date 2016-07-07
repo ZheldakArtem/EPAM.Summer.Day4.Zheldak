@@ -9,14 +9,6 @@ namespace Task1.NUnitTests
     public static class JaggedArrayOperationTests
     {
        
-        //[TestClass]
-        //public class InconclusiveDemo
-        //{
-        //    [TestMethod]
-        //    public void Test1()
-        //    {
-        //        Assert.Inconclusive();
-        //    }
-        //}
+        
     }
 }
