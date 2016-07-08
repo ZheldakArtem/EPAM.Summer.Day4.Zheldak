@@ -31,7 +31,7 @@ namespace Task2
                 {
                     str.Append(" " + customer.ContactPhone);
                 }
-
+                
                 return str.ToString();
             }
             return arg.ToString();
