@@ -8,9 +8,9 @@ namespace Tas3
 {
     public class DoubleToBit
     {
-        private const int MAXBIT = 64;
-        private const int MANTISSABIT = 52;
-        private const int EXPBIT = 11;
+      
+        private const int Mantissabit = 52;
+        private const int Expbit = 11;
 
         public static string ConvertDoubleByte(double doubleVal)
         {
@@ -18,7 +18,7 @@ namespace Tas3
 
             if (doubleVal < 0)
             {
-                result += "-1";
+                result += "1";
             }
             else
             {
@@ -27,10 +27,10 @@ namespace Tas3
 
             string[] splitStr = doubleVal.ToString().Split(',');
             string wholeStr = IntToBin(int.Parse(splitStr[0]));
-            string remainderBitStr = RemainderToBit(double.Parse("0," + splitStr[1]), MANTISSABIT - wholeStr.Length + 1);
+            string remainderBitStr = RemainderToBit(double.Parse("0," + splitStr[1]), Mantissabit - wholeStr.Length + 1);
             string expToBit = IntToBin(wholeStr.Length - 1 + 1023);
 
-            for (int i = 0; i < expToBit.Length - EXPBIT; i++)
+            for (int i = 0; i < expToBit.Length - Expbit; i++)
             {
                 expToBit += "0";
             }
@@ -96,7 +96,7 @@ namespace Tas3
             }
             strBuild.AppendLine(remainderPart);
 
-            for (var i = 1; i < MANTISSABIT - wholePart.Length - 1 - remainderPart.Length; i++)
+            for (var i = 1; i < Mantissabit - wholePart.Length - 1 - remainderPart.Length; i++)
             {
                 strBuild.Append("0");
             }
