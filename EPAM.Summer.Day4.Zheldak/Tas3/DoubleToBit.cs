@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Tas3
 {
-    public class DoubleToBit
+    public static class DoublуExtentions
     {
       
         private const int Mantissabit = 52;
         private const int Expbit = 11;
 
-        public static string ConvertDoubleByte(double doubleVal)
+        public static string ConvertDoubleToByte(this double doubleVal)
         {
             string result = string.Empty;
 
