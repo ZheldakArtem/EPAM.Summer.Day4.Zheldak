@@ -8,11 +8,15 @@ namespace Tas3
 {
     public static class DoublуExtentions
     {
-      
+
         private const int Mantissabit = 52;
         private const int Expbit = 11;
-
-        public static string ConvertDoubleToByte(this double doubleVal)
+        /// <summary>
+        /// The method converts the double value to binary value.
+        /// </summary>
+        /// <param name="doubleVal">input number</param>
+        /// <returns>String binary number</returns>
+        public static string ConvertDoubleToStringOfBits(this double doubleVal)
         {
             string result = string.Empty;
 
@@ -39,15 +43,15 @@ namespace Tas3
             return result;
         }
 
-        static private string RemainderToBit(double remainder, int maxLength)
+        private static string RemainderToBit(double remainder, int maxLength)
         {
-           
+
             var str = new StringBuilder();
             if (remainder < 0 || remainder >= 1)
             {
                 throw new ArgumentException();
             }
-        
+
             if (remainder == 0)
             {
                 for (int i = 0; i < maxLength - 1; i++)
@@ -77,7 +81,7 @@ namespace Tas3
 
             return str.ToString();
         }
-        static private string IntToBin(long number)
+        private static string IntToBin(long number)
         {
             var stBuild = new StringBuilder();
 
@@ -86,7 +90,7 @@ namespace Tas3
 
             return stBuild.ToString().TrimStart('0');
         }
-        static private string GetMantissa(string wholePart, string remainderPart)
+        private static string GetMantissa(string wholePart, string remainderPart)
         {
             var strBuild = new StringBuilder();
             char[] ch = wholePart.ToCharArray();
