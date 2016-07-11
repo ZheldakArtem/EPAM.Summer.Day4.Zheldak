@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Math;
 
-namespace Tas3
+namespace Task3
 {
     public static class DoublуExtentions
     {
@@ -30,7 +31,7 @@ namespace Tas3
             }
 
             string[] splitStr = doubleVal.ToString().Split(',');
-            string wholeStr = IntToBin(int.Parse(splitStr[0]));
+            string wholeStr = IntToBin(Abs(int.Parse(splitStr[0])));
             string remainderBitStr = RemainderToBit(double.Parse("0," + splitStr[1]), Mantissabit - wholeStr.Length + 1);
             string expToBit = IntToBin(wholeStr.Length - 1 + 1023);
 
@@ -77,6 +78,7 @@ namespace Tas3
                 {
                     str.Append("0");
                 }
+                remainder = Round(remainder, 3);
             }
 
             return str.ToString();
@@ -98,13 +100,14 @@ namespace Tas3
             {
                 strBuild.Append(ch[i]);
             }
-            strBuild.AppendLine(remainderPart);
+            strBuild.Append(remainderPart);
 
-            for (var i = 1; i < Mantissabit - wholePart.Length - 1 - remainderPart.Length; i++)
+            for (var i = 0; i <= Mantissabit - wholePart.Length - remainderPart.Length; i++)
             {
                 strBuild.Append("0");
             }
-
+            strBuild.ToString();
+            int d = strBuild.Length;
             return strBuild.ToString();
         }
     }

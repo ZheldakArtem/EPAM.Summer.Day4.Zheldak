@@ -9,13 +9,51 @@ namespace Task1
     static public class JaggedArrayOperation
     {
         /// <summary>
+        ///Sort algorithm with 6 different ways of sorting
+        /// </summary>
+        /// <param name="array">Array</param>
+        /// <param name="choise">Criterion of comparison 1 - sum ascending, 2 - sum descending, 
+        /// 3 - max values ascending, 4 - max values descending, 5- min values ascending, 6 - min values descending</param>
+        public static void BubbleSortMethod(int[][] array, int choise)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+
+            switch (choise)
+            {
+                case 1:
+                    JaggedSortRowsBySumAscend(array);
+                    break;
+                case 2:
+                    JaggedSortRowsBySumDescend(array);
+                    break;
+                case 3:
+                    JaggedSortRowsByMaxAscend(array);
+                    break;
+                case 4:
+                    JaggedSortRowsByMaxDescend(array);
+                    break;
+                case 5:
+                    JaggedSortRowsByMinAscend(array);
+                    break;
+                case 6:
+                    JaggedSortRowsByMinDescend(array);
+                    break;
+                default: throw new ArgumentException();
+            }
+        }
+        
+        /// <summary>
         /// Sorting rows of the matrix in ascending order of sums elements rows of the matrix`
         /// </summary>
         /// <param name="someJagged">Not sorted array</param>
         /// <returns>Sorted array</returns>
-        public static int[][] JaggedSortRowsBySumAscend(int[][] someJagged)
+        private static int[][] JaggedSortRowsBySumAscend(int[][] someJagged)
         {
-           
+
             for (int i = 0; i < someJagged.Length; i++)
             {
                 for (int j = 0; j < someJagged.Length - 1 - i; j++)
@@ -35,7 +73,7 @@ namespace Task1
         /// </summary>
         /// <param name="someJagged">Not sorted array</param>
         /// <returns>Sorted array</returns>
-        public static int[][] JaggedSortRowsBySumDescend(int[][] someJagged)
+        private static int[][] JaggedSortRowsBySumDescend(int[][] someJagged)
         {
 
             for (int i = 0; i < someJagged.Length; i++)
@@ -57,7 +95,7 @@ namespace Task1
         /// </summary>
         /// <param name="someJagged"></param>
         /// <returns>Sorted array</returns>
-        public static int[][] JaggedSortRowsByMaxAscend(int[][] someJagged)
+        private static int[][] JaggedSortRowsByMaxAscend(int[][] someJagged)
         {
 
             for (int i = 0; i < someJagged.Length; i++)
@@ -79,7 +117,7 @@ namespace Task1
         /// </summary>
         /// <param name="someJagged"></param>
         /// <returns>Sorted array</returns>
-        public static int[][] JaggedSortRowsByMaxDescend(int[][] someJagged)
+        private static int[][] JaggedSortRowsByMaxDescend(int[][] someJagged)
         {
 
             for (int i = 0; i < someJagged.Length; i++)
@@ -101,7 +139,7 @@ namespace Task1
         /// </summary>
         /// <param name="someJagged"></param>
         /// <returns>Sorted array</returns>
-        public static int[][] JaggedSortRowsByMinAscend(int[][] someJagged)
+        private static int[][] JaggedSortRowsByMinAscend(int[][] someJagged)
         {
 
             for (int i = 0; i < someJagged.Length; i++)
@@ -123,7 +161,7 @@ namespace Task1
         /// </summary>
         /// <param name="someJagged"></param>
         /// <returns>Sorted array</returns>
-        public static int[][] JaggedSortRowsByMinDescend(int[][] someJagged)
+        private static int[][] JaggedSortRowsByMinDescend(int[][] someJagged)
         {
 
             for (int i = 0; i < someJagged.Length; i++)
