@@ -7,6 +7,9 @@ using static System.Math;
 
 namespace Task3
 {
+    /// <summary>
+    ///The Class Contains static method that convert double-precision floating point value to binary format.
+    /// </summary>
     public static class DoublуExtentions
     {
 
