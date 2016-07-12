@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task1.NUnitTests
+namespace Task1
 {
-    public static class JaggedArrayOperationTests
-    {
-       
-        
-    }
+   public interface ISortJagged
+   {
+       void Sort(int[][] someJagged);
+   }
 }

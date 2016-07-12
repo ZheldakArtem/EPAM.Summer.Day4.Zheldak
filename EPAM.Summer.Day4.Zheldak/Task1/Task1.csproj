@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JaggedArrayOperation.cs" />
+    <Compile Include="BoxClasses\SortByMaxModule.cs" />
+    <Compile Include="BoxClasses\SortBySumAscend.cs" />
+    <Compile Include="BoxClasses\SortBySumDescend.cs" />
+    <Compile Include="BoxClasses\SortByMaxAscend.cs" />
+    <Compile Include="BoxClasses\SortByMaxDescend.cs" />
+    <Compile Include="BoxClasses\SortByMinAscend.cs" />
+    <Compile Include="BoxClasses\SortByMinDescend.cs" />
+    <Compile Include="ISortJagged.cs" />
+    <Compile Include="SortOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
