@@ -30,7 +30,7 @@ namespace Task1.NUnitTests
                     new[] {11,22}
                };
 
-            SortOperation.SortMethod(jaggedArray, sortJagged);
+            SortOperationInterfaceToDelegate.SortMethod(jaggedArray, sortJagged);
            
             CollectionAssert.AreEqual(jaggedArray, result);
         }
@@ -54,11 +54,54 @@ namespace Task1.NUnitTests
                    new[] {11,-22},
                };
 
-            SortOperation.SortMethod(jaggedArray, sortJagged);
+            SortOperationInterfaceToDelegate.SortMethod(jaggedArray, sortJagged);
            
             CollectionAssert.AreEqual(jaggedArray, result);
         }
 
+        [Test]
+        public void SortWithDelegateToInterfaceSumRow()
+        {
+            ISortJagged sortJagged = new SortBySumAscend();
+
+            int[][] jaggedArray =
+               {
+                    new[] {1,3,5,7,9},
+                    new[] {0,2,4,0},
+                    new[] {11,22}
+               };
+
+            int[][] result =
+               {
+                    new[] {0,2,4,0},
+                    new[] {1,3,5,7,9},
+                    new[] {11,22}
+               };
+            SortOperationDelegateToInterface.SortMethodDelegate(jaggedArray, sortJagged.Sort);
+            CollectionAssert.AreEqual(jaggedArray, result);
+        }
+
+        [Test]
+        public void SortWithDelegetToInterfaceMaxModule()
+        {
+           ISortJagged sortJagged = new SortByMaxModule();
+
+            int[][] jaggedArray =
+               {
+                    new[] {1,3,5,7,-9},
+                    new[] {11,-22},
+                    new[] {0,2,4,0}
+                };
+
+            int[][] result =
+               {
+                   new[] {0,2,4,0},
+                   new[] {1,3,5,7,-9},
+                   new[] {11,-22},
+               };
+            SortOperationDelegateToInterface.SortMethodDelegate(jaggedArray, sortJagged.Sort);
+            CollectionAssert.AreEqual(jaggedArray, result);
+        }
     }
 }
 

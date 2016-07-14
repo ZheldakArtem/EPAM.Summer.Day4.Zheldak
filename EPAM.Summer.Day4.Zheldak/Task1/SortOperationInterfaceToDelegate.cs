@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Task1
 {
-    static public class SortOperation
+    public delegate void SortDelegate(int[][] jaggedArray);
+
+    public static class SortOperationInterfaceToDelegate
     {
+
+        
         /// <summary>
         /// This method sorts array.  
         /// </summary>
@@ -15,8 +19,16 @@ namespace Task1
         /// <param name="sortInstance">Instance sorting</param>
         public static void SortMethod(int[][] array, ISortJagged sortInstance)
         {
-            sortInstance.Sort(array);
+            if (array == null || sortInstance == null)
+                throw new ArgumentException();
+            SortMethodDelegate(array, sortInstance.Sort);
         }
+
+        private static void SortMethodDelegate(int[][] array, SortDelegate sorting)
+        {
+            sorting(array);
+        }
+
     }
 }
 

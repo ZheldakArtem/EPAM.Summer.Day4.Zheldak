@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxClasses\SortByMaxAscend.cs" />
+    <Compile Include="BoxClasses\SortByMaxDescend.cs" />
+    <Compile Include="BoxClasses\SortByMaxModule.cs" />
+    <Compile Include="BoxClasses\SortByMinAscend.cs" />
+    <Compile Include="BoxClasses\SortByMinDescend.cs" />
+    <Compile Include="BoxClasses\SortBySumAscend.cs" />
+    <Compile Include="BoxClasses\SortBySumDescend.cs" />
     <Compile Include="SortOperationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
