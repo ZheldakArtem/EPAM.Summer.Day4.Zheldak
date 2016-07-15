@@ -15,12 +15,9 @@ namespace Task1
         /// </summary>
         /// <param name="array">Customer's array</param>
         /// <param name="sortInstance">Instance sorting</param>
-        /// 
         private static void SortMethod(int[][] array, IComparer<int> compareInstance)
         {
-            if (array == null || compareInstance == null) throw new ArgumentException();
-
-            for (int i = 0; i < array.Length; i++)
+           for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length - 1 - i; j++)
                 {
@@ -40,6 +37,7 @@ namespace Task1
             SortMethod(array, new SortAdapter(sorterFunc));
         }
 
+        #region SortAdapter
         private class SortAdapter : IComparer<int>
         {
             private readonly Func<int[], int[], int> _sortAdapter;
@@ -56,6 +54,7 @@ namespace Task1
                 return _sortAdapter(lhs, rhs);
             }
         }
+        #endregion
         private static void Swap(ref int[] lhs, ref int[] rhs)
         {
             var temp = lhs;
