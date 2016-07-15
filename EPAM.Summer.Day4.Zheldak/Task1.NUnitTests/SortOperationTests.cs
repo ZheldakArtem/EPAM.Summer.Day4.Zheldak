@@ -14,7 +14,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortBySummRowsAscend()
         {
-            IComparer sortJagged = new SortBySumAscend();
+            IComparer<int> sortJagged = new SortBySumAscend();
 
             int[][] jaggedArray =
                 {
@@ -30,7 +30,7 @@ namespace Task1.NUnitTests
                     new[] {11,22}
                };
 
-            SortOperationInterfaceToDelegate.SortMethod(jaggedArray, sortJagged);
+            SortOperationDelegateToInterface.SortMethod(jaggedArray, sortJagged.Comparer);
            
             CollectionAssert.AreEqual(jaggedArray, result);
         }
@@ -38,7 +38,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortByMaxModuleElements()
         {
-            IComparer sortJagged = new SortByMaxModule();
+            IComparer<int> sortJagged = new SortByMaxModule();
 
             int[][] jaggedArray =
                 {
@@ -62,7 +62,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortWithDelegateToInterfaceSumRow()
         {
-            IComparer sortJagged = new SortBySumAscend();
+            IComparer<int> sortJagged = new SortBySumAscend();
 
             int[][] jaggedArray =
                {
@@ -77,14 +77,14 @@ namespace Task1.NUnitTests
                     new[] {1,3,5,7,9},
                     new[] {11,22}
                };
-            SortOperationDelegateToInterface.SortMethodDelegate(jaggedArray, sortJagged.Sort);
+            SortOperationDelegateToInterface.SortMethod(jaggedArray, sortJagged.Comparer);
             CollectionAssert.AreEqual(jaggedArray, result);
         }
 
         [Test]
         public void SortWithDelegetToInterfaceMaxModule()
         {
-           IComparer sortJagged = new SortByMaxModule();
+           IComparer<int> sortJagged = new SortByMaxModule();
 
             int[][] jaggedArray =
                {
@@ -99,7 +99,7 @@ namespace Task1.NUnitTests
                    new[] {1,3,5,7,-9},
                    new[] {11,-22},
                };
-            SortOperationDelegateToInterface.SortMethodDelegate(jaggedArray, sortJagged.Sort);
+            SortOperationDelegateToInterface.SortMethod(jaggedArray, sortJagged.Comparer);
             CollectionAssert.AreEqual(jaggedArray, result);
         }
     }

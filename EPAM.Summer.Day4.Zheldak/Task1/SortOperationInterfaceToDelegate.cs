@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 using Task1;
 
 namespace Task1
-{
-     public  class SortOperationDelegateToInterface
+{       
+     public  class SortOperationInterfaceToDelegate
     {
         /// <summary>
         /// This method sorts array.  
         /// </summary>
         /// <param name="array">Customer's array</param>
-        /// <param name="sorting">It's delegate parameter</param>
-        private static void SortMethodDelegate(int[][] array, Func<int[],int[],int> comparerFunc)
+        /// <param name="comparerFunc">It's delegate parameter</param>
+        public static void SortMethod(int[][] array, Func<int[],int[],int> comparerFunc)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -41,7 +41,7 @@ namespace Task1
                 throw new ArgumentException();
             }
 
-            SortMethodDelegate(array,compareInstance.Comparer);
+            SortMethod(array,compareInstance.Comparer);
         }
 
         private static void Swap(ref int[] lhs, ref int[] rhs)

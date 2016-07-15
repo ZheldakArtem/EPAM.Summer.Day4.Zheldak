@@ -26,7 +26,7 @@ namespace Task1.BoxClasses
         {
             int max = 0;
 
-            for (int i = 1; i < array.Length - 1; i--)
+            for (int i = 1; i < array.Length ; i++)
             {
                 max = array[0];
                 if (Abs(max) < Abs(array[i]))
@@ -35,7 +35,7 @@ namespace Task1.BoxClasses
                 }
             }
 
-            return max;
+            return Abs(max);
         }
     }
 }

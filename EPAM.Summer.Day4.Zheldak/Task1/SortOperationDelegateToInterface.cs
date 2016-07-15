@@ -8,16 +8,16 @@ namespace Task1
 {
     public delegate void SortDelegate(int[][] jaggedArray);
 
-    public static class SortOperationInterfaceToDelegate
+    public static class SortOperationDelegateToInterface
     {
         /// <summary>
         /// This method sorts array.  
         /// </summary>
         /// <param name="array">Customer's array</param>
         /// <param name="sortInstance">Instance sorting</param>
-        private static void SortMethod(int[][] array, IComparer<int> compareInstance)
+        public static void SortMethod(int[][] array, IComparer<int> compareInstance)
         {
-           for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length - 1 - i; j++)
                 {
