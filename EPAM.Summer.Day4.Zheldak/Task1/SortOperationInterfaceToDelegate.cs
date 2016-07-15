@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -17,12 +16,6 @@ namespace Task1
         /// <param name="sorting">It's delegate parameter</param>
         public static void SortMethodDelegate(int[][] array, SortDelegate sorting)
         {
-            byte[] byteInt = BitConverter.ToInt64(0.2,0);
-            if (array==null||sorting==null)
-                throw new ArgumentException();
-            if(!(sorting.Target is IComparer<int>))
-                throw new ArgumentException();
-
             var sortedJagged = (IComparer) sorting.Target;
             SortMethod(array,sortedJagged);
         }
