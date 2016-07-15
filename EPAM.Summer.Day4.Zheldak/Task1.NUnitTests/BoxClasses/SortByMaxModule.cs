@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 using static System.Math;
 namespace Task1.BoxClasses
 {
-  public  class SortByMaxModule : ISortJagged
+  public  class SortByMaxModule : IComparer<int>
     {
+        public int Comparer(int[] lhs, int[] rhs)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Sort(int[][] someJagged)
         {
             for (int i = 0; i < someJagged.Length; i++)

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Task1
 {
-    public interface ISortJagged
+    public interface IComparer<T>
     {
-        void Sort(int[][] someJagged);
+       T Comparer(T[] lhs, T[] rhs);
     }
 }

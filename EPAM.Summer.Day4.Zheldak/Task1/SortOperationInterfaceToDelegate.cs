@@ -1,34 +1,36 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Task1
 {
-    public delegate void SortDelegate(int[][] jaggedArray);
-
-    public static class SortOperationInterfaceToDelegate
+     public  class SortOperationDelegateToInterface
     {
-
-        
         /// <summary>
         /// This method sorts array.  
         /// </summary>
         /// <param name="array">Customer's array</param>
-        /// <param name="sortInstance">Instance sorting</param>
-        public static void SortMethod(int[][] array, ISortJagged sortInstance)
+        /// <param name="sorting">It's delegate parameter</param>
+        public static void SortMethodDelegate(int[][] array, SortDelegate sorting)
         {
-            if (array == null || sortInstance == null)
+            byte[] byteInt = BitConverter.ToInt64(0.2,0);
+            if (array==null||sorting==null)
                 throw new ArgumentException();
-            SortMethodDelegate(array, sortInstance.Sort);
+            if(!(sorting.Target is IComparer<int>))
+                throw new ArgumentException();
+
+            var sortedJagged = (IComparer) sorting.Target;
+            SortMethod(array,sortedJagged);
         }
 
-        private static void SortMethodDelegate(int[][] array, SortDelegate sorting)
+
+        private static void SortMethod(int[][] array, IComparer sortInstance)
         {
-            sorting(array);
+            sortInstance.Sort(array);
         }
-
     }
 }
-

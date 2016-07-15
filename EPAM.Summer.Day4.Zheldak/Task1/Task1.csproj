@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISortJagged.cs" />
-    <Compile Include="SortOperationDelegateToInterface.cs" />
     <Compile Include="SortOperationInterfaceToDelegate.cs" />
+    <Compile Include="sortOperationDelegateToInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Task1.BoxClasses
 {
-  public  class SortByMaxAscend : ISortJagged
+  public  class SortByMaxAscend : IComparer<int>
     {
+       public int Comparer(int[] lhs, int[] rhs)
+       {
+           if (lhs.Max() > rhs.Max())
+               return 1;
+           if (lhs.Max() < rhs.Max())
+               return -1;
+           return 0;
+       }
+
         /// <summary>
         /// Sorting rows of the matrix in ascending order of max elements rows of the matrix
         /// </summary>

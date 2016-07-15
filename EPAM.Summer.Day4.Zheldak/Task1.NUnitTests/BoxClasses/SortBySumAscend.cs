@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Task1
 {
-    public class SortBySumAscend : ISortJagged
+    public class SortBySumAscend : IComparer<int>
     {
+        public int Comparer(int[] lhs, int[] rhs)
+        {
+            if (lhs.Sum() > rhs.Sum())
+                return 1;
+            if (lhs.Sum() < rhs.Sum())
+                return -1;
+            return 0;
+        }
+
         /// <summary>
         /// Sorting rows of the matrix in ascending order of sums elements rows of the matrix`
         /// </summary>

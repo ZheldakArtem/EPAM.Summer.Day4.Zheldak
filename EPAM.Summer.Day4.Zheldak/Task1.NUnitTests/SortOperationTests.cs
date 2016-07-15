@@ -14,7 +14,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortBySummRowsAscend()
         {
-            ISortJagged sortJagged = new SortBySumAscend();
+            IComparer sortJagged = new SortBySumAscend();
 
             int[][] jaggedArray =
                 {
@@ -38,7 +38,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortByMaxModuleElements()
         {
-            ISortJagged sortJagged = new SortByMaxModule();
+            IComparer sortJagged = new SortByMaxModule();
 
             int[][] jaggedArray =
                 {
@@ -62,7 +62,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortWithDelegateToInterfaceSumRow()
         {
-            ISortJagged sortJagged = new SortBySumAscend();
+            IComparer sortJagged = new SortBySumAscend();
 
             int[][] jaggedArray =
                {
@@ -84,7 +84,7 @@ namespace Task1.NUnitTests
         [Test]
         public void SortWithDelegetToInterfaceMaxModule()
         {
-           ISortJagged sortJagged = new SortByMaxModule();
+           IComparer sortJagged = new SortByMaxModule();
 
             int[][] jaggedArray =
                {
